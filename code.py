@@ -3,6 +3,8 @@ from digitalio import DigitalInOut, Direction
 import digitalio
 import time
 import board
+import pwmio
+from adafruit_motor import servo
 
 # GP16 - b1
 # GP17 - g1
@@ -11,6 +13,24 @@ import board
 # GP19 - b2
 # GP20 - g2
 # GP21 - r2
+
+"""
+Servos:
+GP0 - servo 1
+GP1 - servo 2
+"""
+
+
+servo_pwm_1 = pwmio.PWMOut(board.GP0, duty_cycle=2**15, frequency=50)
+
+# Create a servo object, my_servo.
+servo_1 = servo.Servo(servo_pwm_1)
+
+
+servo_pwm_2 = pwmio.PWMOut(board.GP1, duty_cycle=2**15, frequency=50)
+
+# Create a servo object, my_servo.
+servo_2 = servo.Servo(servo_pwm_2)
 
 
 class RGBLed:
@@ -51,18 +71,29 @@ def main():
     l3.write_rgb(False, False, False)
     l4.write_rgb(False, False, False)
     time.sleep(0.5)
+<<<<<<< Updated upstream
 
     while (True):
+=======
+    angle = 90
+    while True:
+>>>>>>> Stashed changes
         l1.write_rgb(False, False, False)
         l2.write_rgb(False, False, False)
         l3.write_rgb(False, False, False)
         l4.write_rgb(False, False, False)
+        servo_1.angle = angle
+        servo_2.angle = angle
+        angle = 0
         time.sleep(0.5)
 
         l1.write_rgb(False, False, False)
         l2.write_rgb(False, False, False)
         l3.write_rgb(False, False, False)
         l4.write_rgb(False, False, False)
+        servo_1.angle = angle
+        servo_2.angle = angle
+        angle = 90
         time.sleep(0.5)
 
 
