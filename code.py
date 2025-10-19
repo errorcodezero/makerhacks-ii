@@ -38,21 +38,13 @@ class RGBLed:
         self.write_b(b_value)
 
 
-def setup():
-    RGBLed1 = RGBLed(board.GP18, board.GP17, board.GP16)
-    RGBLed2 = RGBLed(board.GP21, board.GP20, board.GP19)
-    RGBLed3 = RGBLed(board.GP26, board.GP27, board.GP22)
-    RGBLed4 = RGBLed(board.GP14, board.GP13, board.GP15)
-
-    RGBLed1.write_rgb(True, True, True)
-    RGBLed2.write_rgb(True, True, True)
-    RGBLed3.write_rgb(True, True, True)
-    RGBLed4.write_rgb(True, True, True)
-
-    return RGBLed1, RGBLed2, RGBLed3, RGBLed4
-
-def main(l1: RGBLed, l2: RGBLed, l3: RGBLed, l4: RGBLed):
+def main():
     time.sleep(2)
+
+    l1 = RGBLed(board.GP18, board.GP17, board.GP16)
+    l2 = RGBLed(board.GP21, board.GP20, board.GP19)
+    l3 = RGBLed(board.GP26, board.GP27, board.GP22)
+    l4 = RGBLed(board.GP14, board.GP13, board.GP15)
 
     l1.write_rgb(False, False, False)
     l2.write_rgb(False, False, False)
@@ -60,7 +52,7 @@ def main(l1: RGBLed, l2: RGBLed, l3: RGBLed, l4: RGBLed):
     l4.write_rgb(False, False, False)
     time.sleep(0.5)
 
-    while(True):
+    while (True):
         l1.write_rgb(False, False, False)
         l2.write_rgb(False, False, False)
         l3.write_rgb(False, False, False)
@@ -72,9 +64,7 @@ def main(l1: RGBLed, l2: RGBLed, l3: RGBLed, l4: RGBLed):
         l3.write_rgb(False, False, False)
         l4.write_rgb(False, False, False)
         time.sleep(0.5)
-
 
 
 if __name__ == "__main__":
-    l1, l2, l3, l4 = setup()
-    main(l1, l2, l3, l4)
+    main()
