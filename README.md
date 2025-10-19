@@ -8,3 +8,4 @@ Open Prototype Theme: Something that restores equilibrium after being pushed by 
 - Game with gyroscope that's a ball in a maze dodging holes(on screen)
 - Game with actual ball and maze with servo motors to tilt the maze and move the ball
 - Clients which are able to talk to each other but each person has to send a message. You can't send multiple messages in a row since you need to wait for everyone to respond.
+- Balancing robot with 4 servo legs, 2 tilt sensors, 4 leds for each leg
