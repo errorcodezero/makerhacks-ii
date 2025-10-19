@@ -71,13 +71,11 @@ def main():
     l3.write_rgb(False, False, False)
     l4.write_rgb(False, False, False)
     time.sleep(0.5)
-<<<<<<< Updated upstream
 
-    while (True):
-=======
     angle = 90
+
     while True:
->>>>>>> Stashed changes
+
         l1.write_rgb(False, False, False)
         l2.write_rgb(False, False, False)
         l3.write_rgb(False, False, False)
